@@ -20,8 +20,6 @@
 
 ;;; key bindings
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-<tab>") 'next-buffer)
-(global-set-key (kbd "C-S-<iso-lefttab>") 'previous-buffer)
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive) (scroll-right 3 t)))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive) (scroll-left 3 t)))
 
@@ -46,3 +44,9 @@
 ;;; repeatable
 (require 'repeatable)
 (repeatable-command-advice other-window)
+
+;;; iflipb
+(require 'iflipb)
+(setq iflipb-wrap-around 1)
+(global-set-key (kbd "C-<tab>") 'iflipb-next-buffer)
+(global-set-key (kbd "C-S-<iso-lefttab>") 'iflipb-previous-buffer)
