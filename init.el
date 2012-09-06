@@ -42,6 +42,14 @@
 	    (ibuffer-vc-set-filter-groups-by-vc-root)
 	    (ibuffer-do-sort-by-alphabetic)))
 
+;;; projectile
+(projectile-global-mode)
+
+;;; smex
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 ;;; repeatable
 (require 'repeatable)
 (repeatable-command-advice other-window)
