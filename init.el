@@ -24,6 +24,9 @@
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive) (scroll-right 3 t)))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive) (scroll-left 3 t)))
 
+;;; theme
+(load-theme 'local t)
+
 ;;; package
 (require 'package)
 (add-to-list 'package-archives 
