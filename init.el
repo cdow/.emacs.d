@@ -17,6 +17,7 @@
 (tool-bar-mode -1)
 (delete-selection-mode t)
 (ido-mode t)
+(global-auto-revert-mode t)
 
 ;;; key bindings
 (global-set-key (kbd "C-.") 'repeat)
