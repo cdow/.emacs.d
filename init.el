@@ -31,8 +31,8 @@
 ;;; package
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-						 ("marmalade" . "http://marmalade-repo.org/packages/")
-						 ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
 ;;; evil
@@ -42,9 +42,9 @@
 ;;; ibuffer-vc
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 (add-hook 'ibuffer-hook
-	  (lambda ()
-	    (ibuffer-vc-set-filter-groups-by-vc-root)
-	    (ibuffer-do-sort-by-alphabetic)))
+      (lambda ()
+        (ibuffer-vc-set-filter-groups-by-vc-root)
+        (ibuffer-do-sort-by-alphabetic)))
 
 ;;; projectile
 (projectile-global-mode)
