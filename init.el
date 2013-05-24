@@ -37,6 +37,11 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
+;;; window-number
+(require 'window-number)
+(window-number-mode)
+(window-number-meta-mode)
+
 ;;; evil
 (evil-mode)
 (setq evil-default-state 'emacs)
