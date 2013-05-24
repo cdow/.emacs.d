@@ -8,7 +8,8 @@
 (setq visible-bell t)
 (setq-default tab-width 4)
 (set-default-font "DejaVu Sans Mono-9")
-(add-to-list 'default-frame-alist '(height . 45))
+(if window-system
+    (set-frame-size (selected-frame) 105 45))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; modes
@@ -18,6 +19,7 @@
 (delete-selection-mode t)
 (ido-mode t)
 (global-auto-revert-mode t)
+(global-linum-mode t)
 
 ;;; key bindings
 (global-set-key (kbd "C-.") 'repeat)
