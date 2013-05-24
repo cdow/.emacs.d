@@ -28,7 +28,8 @@
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive) (scroll-left 3 t)))
 
 ;;; theme
-(load-theme 'local t)
+(load-theme 'tangotango t)
+(load-theme 'tangotango-override t)
 
 ;;; package
 (require 'package)
