@@ -16,6 +16,7 @@
 (line-number-mode t)
 (column-number-mode t)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 (delete-selection-mode t)
 (ido-mode t)
 (global-auto-revert-mode t)
