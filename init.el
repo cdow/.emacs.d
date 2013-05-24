@@ -38,16 +38,23 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
+(defun ensure-installed (package-name)
+  (unless (package-installed-p package-name)
+    (package-refresh-contents) (package-install package-name)))
+
 ;;; window-number
+(ensure-installed 'window-number)
 (require 'window-number)
 (window-number-mode)
 (window-number-meta-mode)
 
 ;;; evil
+(ensure-installed 'evil)
 (evil-mode)
 (setq evil-default-state 'emacs)
 
 ;;; ibuffer-vc
+(ensure-installed 'ibuffer-vc)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 (add-hook 'ibuffer-hook
       (lambda ()
@@ -55,9 +62,11 @@
         (ibuffer-do-sort-by-alphabetic)))
 
 ;;; projectile
+(ensure-installed 'projectile)
 (projectile-global-mode)
 
 ;;; smex
+(ensure-installed 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
