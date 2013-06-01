@@ -71,12 +71,12 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-;;; repeatable
-(require 'repeatable)
-(repeatable-command-advice other-window)
-
 ;;; iflipb
-(require 'iflipb)
+(ensure-installed 'iflipb)
 (setq iflipb-wrap-around 1)
 (global-set-key (kbd "C-<tab>") 'iflipb-next-buffer)
 (global-set-key (kbd "C-S-<iso-lefttab>") 'iflipb-previous-buffer)
+
+;;; repeatable
+(require 'repeatable)
+(repeatable-command-advice other-window)
