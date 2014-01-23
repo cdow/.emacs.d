@@ -8,8 +8,9 @@
 (setq visible-bell t)
 (setq-default tab-width 4)
 (set-default-font "DejaVu Sans Mono-9")
-(if window-system
-    (set-frame-size (selected-frame) 105 45))
+(when (display-graphic-p)
+    (add-to-list 'default-frame-alist '(height . 45))
+    (add-to-list 'default-frame-alist '(width . 105)))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; modes
