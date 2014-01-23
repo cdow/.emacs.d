@@ -32,6 +32,11 @@
 (load-theme 'tangotango t)
 (load-theme 'tangotango-override t)
 
+;;; whitespace
+(global-whitespace-mode)
+(setq whitespace-style '(face spaces tabs space-mark tab-mark))
+(setq linum-format "%d") ; so whitespace doesn't break line numbers
+
 ;;; package
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
