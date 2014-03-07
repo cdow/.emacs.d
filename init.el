@@ -6,6 +6,7 @@
 (setq inhibit-startup-screen t)
 (setq make-backup-files nil)
 (setq visible-bell t)
+(setq initial-scratch-message "")
 (setq-default tab-width 4)
 (set-default-font "DejaVu Sans Mono-9")
 (when (display-graphic-p)
@@ -22,6 +23,7 @@
 (ido-mode t)
 (global-auto-revert-mode t)
 (global-linum-mode t)
+(bar-cursor-mode t)
 
 ;;; key bindings
 (global-set-key (kbd "C-.") 'repeat)
@@ -83,6 +85,6 @@
 (global-set-key (kbd "C-<tab>") 'iflipb-next-buffer)
 (global-set-key (kbd "C-S-<iso-lefttab>") 'iflipb-previous-buffer)
 
-;;; repeatable
-(require 'repeatable)
-(repeatable-command-advice other-window)
+;;; silver searcher
+(ensure-installed 'ag)
+
