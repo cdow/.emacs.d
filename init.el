@@ -88,3 +88,9 @@
 ;;; silver searcher
 (ensure-installed 'ag)
 
+;;; fuzzy-format
+(ensure-installed 'fuzzy-format)
+(require 'fuzzy-format)
+(setq fuzzy-format-default-indent-tabs-mode t)
+(global-fuzzy-format-mode t)
+
