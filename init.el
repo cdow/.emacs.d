@@ -97,4 +97,5 @@
 ;;; auto-complet
 (ensure-installed 'auto-complete)
 (global-auto-complete-mode t)
+(ac-linum-workaround)
 
