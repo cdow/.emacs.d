@@ -94,3 +94,7 @@
 (setq fuzzy-format-default-indent-tabs-mode t)
 (global-fuzzy-format-mode t)
 
+;;; auto-complet
+(ensure-installed 'auto-complete)
+(global-auto-complete-mode t)
+
