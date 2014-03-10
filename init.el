@@ -94,7 +94,7 @@
 (setq fuzzy-format-default-indent-tabs-mode t)
 (global-fuzzy-format-mode t)
 
-;;; auto-complet
+;;; auto-complete
 (ensure-installed 'auto-complete)
 (global-auto-complete-mode t)
 (ac-linum-workaround)
