@@ -26,7 +26,7 @@
 (bar-cursor-mode t)
 
 ;;; key bindings
-(global-set-key (kbd "C-.") 'repeat)
+(global-set-key (kbd "C-.") 'whitespace-mode)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive) (scroll-right 3 t)))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive) (scroll-left 3 t)))
@@ -36,7 +36,8 @@
 (load-theme 'tangotango-override t)
 
 ;;; whitespace
-(global-whitespace-mode)
+;; disabled until auto-complete issue #32 is fixed
+;(global-whitespace-mode)
 (setq whitespace-style '(face spaces tabs space-mark tab-mark))
 (setq linum-format "%d") ; so whitespace doesn't break line numbers
 
