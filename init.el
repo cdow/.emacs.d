@@ -99,3 +99,7 @@
 (global-auto-complete-mode t)
 (ac-linum-workaround)
 
+;;; ac-dabbrev
+(ensure-installed 'ac-dabbrev)
+(global-set-key (kbd "M-/") '(lambda () (interactive) (auto-complete '(ac-source-dabbrev))))
+
