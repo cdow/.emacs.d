@@ -95,12 +95,7 @@
 (setq fuzzy-format-default-indent-tabs-mode t)
 (global-fuzzy-format-mode t)
 
-;;; auto-complete
-(ensure-installed 'auto-complete)
-(global-auto-complete-mode t)
-(ac-linum-workaround)
-
-;;; ac-dabbrev
-(ensure-installed 'ac-dabbrev)
-(global-set-key (kbd "M-/") '(lambda () (interactive) (auto-complete '(ac-source-dabbrev))))
+;;; company-mode
+(ensure-installed 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 
