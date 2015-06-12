@@ -23,7 +23,6 @@
 (ido-mode t)
 (global-auto-revert-mode t)
 (global-linum-mode t)
-(bar-cursor-mode t)
 
 ;;; key bindings
 (global-set-key (kbd "C-.") 'whitespace-mode)
@@ -61,6 +60,8 @@
 (ensure-installed 'evil)
 (evil-mode)
 (setq evil-default-state 'emacs)
+(setq evil-emacs-state-cursor '(bar))
+(setq evil-insert-state-cursor '(bar))
 
 ;;; ibuffer-vc
 (ensure-installed 'ibuffer-vc)
