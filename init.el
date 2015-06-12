@@ -98,3 +98,7 @@
 (ensure-installed 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
+;;; flycheck
+(ensure-installed 'flycheck)
+(global-flycheck-mode)
+
