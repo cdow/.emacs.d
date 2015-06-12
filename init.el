@@ -9,9 +9,7 @@
 (setq initial-scratch-message "")
 (setq-default tab-width 4)
 (set-frame-font "DejaVu Sans Mono-9")
-(when (display-graphic-p)
-    (add-to-list 'default-frame-alist '(height . 45))
-    (add-to-list 'default-frame-alist '(width . 105)))
+(when window-system (set-frame-size (selected-frame) 125 50)) ;
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; modes
