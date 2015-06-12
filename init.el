@@ -8,7 +8,7 @@
 (setq visible-bell t)
 (setq initial-scratch-message "")
 (setq-default tab-width 4)
-(set-default-font "DejaVu Sans Mono-9")
+(set-frame-font "DejaVu Sans Mono-9")
 (when (display-graphic-p)
     (add-to-list 'default-frame-alist '(height . 45))
     (add-to-list 'default-frame-alist '(width . 105)))
