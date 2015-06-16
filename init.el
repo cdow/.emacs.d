@@ -25,7 +25,6 @@
 
 ;;; key bindings
 (global-set-key (kbd "C-.") 'whitespace-mode)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "<mouse-6>") (lambda () (interactive) (scroll-right 3 t)))
 (global-set-key (kbd "<mouse-7>") (lambda () (interactive) (scroll-left 3 t)))
 
