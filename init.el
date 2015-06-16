@@ -72,6 +72,11 @@
 (setq helm-ff-auto-update-initial-value t)
 (global-set-key (kbd "M-x") 'helm-M-x)
 
+;;; helm-projectile
+(ensure-installed 'helm-projectile)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
 ;;; iflipb
 (ensure-installed 'iflipb)
 (setq iflipb-wrap-around 1)
