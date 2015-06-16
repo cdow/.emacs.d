@@ -20,7 +20,6 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (delete-selection-mode t)
-(ido-mode t)
 (global-auto-revert-mode t)
 (global-linum-mode t)
 
@@ -63,23 +62,15 @@
 (setq evil-emacs-state-cursor '(bar))
 (setq evil-insert-state-cursor '(bar))
 
-;;; ibuffer-vc
-(ensure-installed 'ibuffer-vc)
-(autoload 'ibuffer "ibuffer" "List buffers." t)
-(add-hook 'ibuffer-hook
-      (lambda ()
-        (ibuffer-vc-set-filter-groups-by-vc-root)
-        (ibuffer-do-sort-by-alphabetic)))
-
 ;;; projectile
 (ensure-installed 'projectile)
 (projectile-global-mode)
 
-;;; smex
-(ensure-installed 'smex)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;;; helm
+(ensure-installed 'helm)
+(helm-mode 1)
+(setq helm-ff-auto-update-initial-value t)
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;;; iflipb
 (ensure-installed 'iflipb)
