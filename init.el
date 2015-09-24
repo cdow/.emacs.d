@@ -99,3 +99,7 @@
 (ensure-installed 'flycheck)
 (global-flycheck-mode)
 
+;;; git-gutter
+(ensure-installed 'git-gutter)
+(global-git-gutter-mode +1)
+
