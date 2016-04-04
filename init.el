@@ -48,58 +48,68 @@
   (unless (package-installed-p package-name)
     (package-refresh-contents) (package-install package-name)))
 
-;;; window-number
-(ensure-installed 'window-number)
-(require 'window-number)
-(window-number-mode)
-(window-number-meta-mode)
+;;; use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-;;; evil
-(ensure-installed 'evil)
-(evil-mode)
-(setq evil-default-state 'emacs)
-(setq evil-emacs-state-cursor '(bar))
-(setq evil-insert-state-cursor '(bar))
+;;; packages
+(use-package window-number
+  :ensure t
+  :config (progn
+            (window-number-mode)
+            (window-number-meta-mode)))
 
-;;; projectile
-(ensure-installed 'projectile)
-(projectile-global-mode)
+(use-package evil
+  :ensure t
+  :config (progn
+            (evil-mode)
+            (setq evil-default-state 'emacs)
+            (setq evil-emacs-state-cursor '(bar))
+            (setq evil-insert-state-cursor '(bar))))
 
-;;; helm
-(ensure-installed 'helm)
-(helm-mode 1)
-(setq helm-ff-auto-update-initial-value t)
-(global-set-key (kbd "M-x") 'helm-M-x)
+(use-package projectile
+  :ensure t
+  :config (projectile-global-mode))
 
-;;; helm-projectile
-(ensure-installed 'helm-projectile)
-(setq projectile-completion-system 'helm)
-(helm-projectile-on)
+(use-package helm
+  :ensure t
+  :config (progn
+            (helm-mode 1)
+            (setq helm-ff-auto-update-initial-value t))
+  :bind ("M-x" . helm-M-x))
 
-;;; iflipb
-(ensure-installed 'iflipb)
-(setq iflipb-wrap-around 1)
-(global-set-key (kbd "C-<tab>") 'iflipb-next-buffer)
-(global-set-key (kbd "C-S-<iso-lefttab>") 'iflipb-previous-buffer)
+(use-package helm-projectile
+  :ensure t
+  :config (progn
+            (setq projectile-completion-system 'helm)
+            (helm-projectile-on)))
 
-;;; silver searcher
-(ensure-installed 'ag)
+(use-package iflipb
+  :ensure t
+  :config (setq iflipb-wrap-around 1)
+  :bind (("C-<tab>" . iflipb-next-buffer)
+         ("C-S-<iso-lefttab>" . iflipb-previous-buffer)))
 
-;;; fuzzy-format
-(ensure-installed 'fuzzy-format)
-(require 'fuzzy-format)
-(setq fuzzy-format-default-indent-tabs-mode t)
-(global-fuzzy-format-mode t)
+(use-package ag
+  :ensure t)
 
-;;; company-mode
-(ensure-installed 'company)
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package fuzzy-format
+  :ensure t
+  :config (progn
+            (require 'fuzzy-format)
+            (setq fuzzy-format-default-indent-tabs-mode t)
+            (global-fuzzy-format-mode t)))
 
-;;; flycheck
-(ensure-installed 'flycheck)
-(global-flycheck-mode)
+(use-package company
+  :ensure t
+  :init (add-hook 'after-init-hook 'global-company-mode))
 
-;;; git-gutter
-(ensure-installed 'git-gutter)
-(global-git-gutter-mode +1)
+(use-package flycheck
+  :ensure t
+  :config (global-flycheck-mode))
+
+(use-package git-gutter
+  :ensure t
+  :config (global-git-gutter-mode +1))
 
