@@ -82,7 +82,8 @@
   :config (progn
             (helm-mode 1)
             (setq helm-ff-auto-update-initial-value t))
-  :bind ("M-x" . helm-M-x))
+  :bind (("M-x" . helm-M-x)
+         ("C-x C-f" . helm-find-files)))
 
 (use-package helm-projectile
   :ensure t
