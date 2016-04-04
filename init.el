@@ -68,12 +68,17 @@
             (setq evil-emacs-state-cursor '(bar))
             (setq evil-insert-state-cursor '(bar))))
 
+(use-package undo-tree
+  :ensure t
+  :diminish undo-tree-mode)
+
 (use-package projectile
   :ensure t
   :config (projectile-global-mode))
 
 (use-package helm
   :ensure t
+  :diminish helm-mode
   :config (progn
             (helm-mode 1)
             (setq helm-ff-auto-update-initial-value t))
@@ -103,6 +108,7 @@
 
 (use-package company
   :ensure t
+  :diminish company-mode
   :init (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package flycheck
@@ -111,5 +117,6 @@
 
 (use-package git-gutter
   :ensure t
+  :diminish git-gutter-mode
   :config (global-git-gutter-mode +1))
 
