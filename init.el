@@ -69,7 +69,8 @@
   :diminish undo-tree-mode)
 
 (use-package projectile
-  :ensure t
+;  :ensure t
+  :defer 1
   :config (projectile-global-mode))
 
 (use-package helm
@@ -82,7 +83,8 @@
          ("C-x C-f" . helm-find-files)))
 
 (use-package helm-projectile
-  :ensure t
+;  :ensure t
+  :defer 1
   :config (progn
             (setq projectile-completion-system 'helm)
             (helm-projectile-on)))
