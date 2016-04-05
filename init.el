@@ -44,10 +44,6 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
-(defun ensure-installed (package-name)
-  (unless (package-installed-p package-name)
-    (package-refresh-contents) (package-install package-name)))
-
 ;;; use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
